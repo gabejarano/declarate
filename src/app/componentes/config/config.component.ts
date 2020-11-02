@@ -18,13 +18,10 @@ export class ConfigComponent implements OnInit {
   constructor(private router:Router) { }
 
   encriptar(genero:string, link:string, mensaje:string){
-    this.generoEncriptado= btoa(genero);
-    this.linkEncriptado= btoa(link);
-    this.mensajeEncriptado=btoa(mensaje);
-    this.generoEncriptado = this.generoEncriptado.substring(0, this.generoEncriptado.length-2)
-    this.linkEncriptado = this.linkEncriptado.substring(0, this.linkEncriptado.length-2)
-    this.mensajeEncriptado = this.mensajeEncriptado.substring(0, this.mensajeEncriptado.length-2)
-    
+    this.generoEncriptado= encodeURI(genero);
+    this.linkEncriptado= encodeURIComponent(link);
+    console.log(this.linkEncriptado)
+    this.mensajeEncriptado=encodeURI(mensaje);
   }
 
   ngOnInit(): void {
@@ -54,7 +51,7 @@ export class ConfigComponent implements OnInit {
       },
       {
         title: '¿Quieres dejar un mensaje?',
-        input: 'textarea',
+        input: 'text',
         inputPlaceholder: 'Deja un linto mensaje aquí'
       }
 

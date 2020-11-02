@@ -19,12 +19,12 @@ export class CrushComponent implements OnInit {
   }
 
   desencriptar(){
-    this.genero= this.rutaActivada.snapshot.paramMap.get("genero")+"=="
-    this.genero= (atob(this.genero)==="0")?"Novio":(atob(this.genero)==="1")?"Novia":"Pareja";
-    this.link= this.rutaActivada.snapshot.paramMap.get("url")+"=="
-    this.link= atob(this.link)
+    this.genero= this.rutaActivada.snapshot.paramMap.get("genero")
+    this.genero= (decodeURI(this.genero)==="0")?"Novio":(decodeURI(this.genero)==="1")?"Novia":"Pareja";
+    this.link= this.rutaActivada.snapshot.paramMap.get("url")
+    this.link= decodeURIComponent(this.link)
     this.mensaje= this.rutaActivada.snapshot.paramMap.get("mensaje")
-    this.mensaje= atob(this.mensaje)
+    this.mensaje= decodeURI(this.mensaje)
 
     console.log(this.link)
 

@@ -13,7 +13,7 @@ import { ConfigComponent } from './componentes/config/config.component';
     ConfigComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule
   ],
   providers: [],
