@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CrushComponent } from './componentes/crush/crush.component';
 import { ConfigComponent } from './componentes/config/config.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrushComponent,
-    ConfigComponent
+    ConfigComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
