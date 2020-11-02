@@ -1,6 +1,6 @@
-import {Router} from '@angular/router'
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-config',
@@ -23,12 +23,8 @@ export class ConfigComponent implements OnInit {
     console.log(this.linkEncriptado)
     this.mensajeEncriptado=encodeURI(mensaje);
   }
-
-  ngOnInit(): void {
-
-    
   
-
+  ngOnInit(): void {
     Swal.mixin({
       input: 'text',
       confirmButtonText: 'Next &rarr;',

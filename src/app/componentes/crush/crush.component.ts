@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router'
 
@@ -15,8 +14,7 @@ export class CrushComponent implements OnInit {
   botonNo: any;
   top: string;
   left: string;
-  constructor(private rutaActivada: ActivatedRoute) {
-  }
+  constructor(private rutaActivada: ActivatedRoute) { }
 
   desencriptar(){
     this.genero= this.rutaActivada.snapshot.paramMap.get("genero")
@@ -25,15 +23,11 @@ export class CrushComponent implements OnInit {
     this.link= decodeURIComponent(this.link)
     this.mensaje= this.rutaActivada.snapshot.paramMap.get("mensaje")
     this.mensaje= decodeURI(this.mensaje)
-
-    console.log(this.link)
-
   }
 
   ngOnInit(): void {
     this.desencriptar()
   }
-
   eventmousemove(event: any) {
     let x = Math.round(Math.random() * 90)
     let y = Math.round(Math.random() * 90)
