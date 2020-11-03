@@ -3,8 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import {CrushComponent} from './componentes/crush/crush.component';
 import {ConfigComponent} from './componentes/config/config.component';
 
-const routes: Routes = [{
-  path: '',
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/config',
+    pathMatch:'full'
+  },{
+  path: 'config',
   component: ConfigComponent
 },
 {
